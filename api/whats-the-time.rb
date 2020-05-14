@@ -1,3 +1,4 @@
+require "bundler/setup"
 require "bridgetown-core/version"
 
 Handler = Proc.new do |req, res|
