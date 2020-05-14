@@ -15,7 +15,7 @@ source "https://rubygems.org"
 # Happy Bridgetowning!
 
 # Pull in latest Liquid from Shopify with new Render tag
-#gem 'liquid', "> 4.0.3", github: "jaredcwhite/liquid"
+gem 'liquid', "> 4.0.3", github: "jaredcwhite/liquid"
 
 gem "bridgetown", "~> 0.13.0"
 
