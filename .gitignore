@@ -3,7 +3,6 @@ output
 .bridgetown-cache
 .bridgetown-metadata
 .bridgetown-webpack
-Gemfile.lock
 
 # Dependency folders
 node_modules
