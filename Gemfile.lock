@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/jaredcwhite/liquid.git
+  remote: https://github.com/jaredcwhite/liquid.git
   revision: 78f6ccca0aebdcef592f200029d6feba93b55f2c
   specs:
     liquid (4.0.4.pre.beta)
