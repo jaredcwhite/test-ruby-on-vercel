@@ -22,3 +22,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 gem "bridgetown", "~> 0.13.0"
 #gem "bridgetown-builder", path: "../bridgetown/bridgetown-builder"
 #gem "bridgetown-core", path: "../bridgetown/bridgetown-core"
+
+gem "sinatra", "~> 2.0"
+gem "rack", "~> 2.0"
