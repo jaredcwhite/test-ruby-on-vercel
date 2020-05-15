@@ -16,9 +16,9 @@ class NiceServer < WEBrick::HTTPServlet::AbstractServlet
     body = get(@req.query)
     
     if @res["Content-Type"] == 'application/json; charset=utf-8' # hasn't changed…
-      @res.body = body.to_json
+      @res.body = body.to_json.force_encoding Encoding::UTF_8
     else
-      @res.body = body
+      @res.body = body.force_encoding Encoding::UTF_8
     end
   end
 
@@ -38,9 +38,9 @@ class NiceServer < WEBrick::HTTPServlet::AbstractServlet
     body = post(params)
 
     if @res["Content-Type"] == 'application/json; charset=utf-8' # hasn't changed…
-      @res.body = body.to_json
+      @res.body = body.to_json.force_encoding Encoding::UTF_8
     else
-      @res.body = body
+      @res.body = body.force_encoding Encoding::UTF_8
     end
   end
 end
