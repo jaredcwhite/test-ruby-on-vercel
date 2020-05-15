@@ -38,7 +38,7 @@ class NiceServer < WEBrick::HTTPServlet::AbstractServlet
     body = post(params)
 
     if @res["Content-Type"] == 'application/json; charset=utf-8' # hasn't changed…
-      @res.body = body.to_json.force_encoding Encoding::UTF_8
+      @res.body = body.to_json
     else
       @res.body = body.force_encoding Encoding::UTF_8
     end

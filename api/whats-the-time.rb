@@ -1,7 +1,6 @@
+# encoding:ISO-8859-1
 require "bridgetown-core/version"
 require_relative "../lib/nice_server"
-
-Encoding.default_external = Encoding::UTF_8
 
 class Handler < NiceServer
   def get(params)
