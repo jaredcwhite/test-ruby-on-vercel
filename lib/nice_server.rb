@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class NiceServer < WEBrick::HTTPServlet::AbstractServlet
   def get(params)
     {}

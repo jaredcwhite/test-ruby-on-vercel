@@ -1,3 +1,4 @@
+# encoding: UTF-8
 require "bridgetown-core/version"
 require_relative "../lib/nice_server"
 
