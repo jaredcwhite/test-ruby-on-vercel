@@ -14,7 +14,9 @@ document.querySelector("#callapi").addEventListener("click", () => {
 
 document.querySelector("#callpost").addEventListener("click", () => {
   console.info("posting!")
-  axios.post(endpoint).then(response => {
+  const fd = new FormData()
+  fd.append("foo", "bar")
+  axios.post(endpoint, {nice: "that"}).then(response => {
     console.info("response", response)
     // handle success
     const jsondata = response.data

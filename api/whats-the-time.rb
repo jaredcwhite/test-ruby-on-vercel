@@ -1,15 +1,13 @@
 require "bridgetown-core/version"
+require_relative "../lib/nice_server"
 
-class Handler < WEBrick::HTTPServlet::AbstractServlet
-  def do_GET(req, res)
-    res.status = 200
-    res["Content-Type"] = 'text/plain'
-    res.body = "The current Servlet time is: #{Time.new}, and Bridgetown is v#{Bridgetown::VERSION}"
+class Handler < NiceServer
+  def get(params)
+    @res["Content-Type"] = 'text/plain'
+    "The Current Time is: #{Time.new}, and Bridgetown is v#{Bridgetown::VERSION} | params: #{params}"
   end
 
-  def do_POST(req, res)
-    res.status = 200
-    res["Content-Type"] = 'application/json'
-    res.body = '{"body": "I am a posted response!", "version": "v' + Bridgetown::VERSION.to_s + '"}'
+  def post(params)
+    {body: "I am a Posted response! | query #{params}", version: "v#{Bridgetown::VERSION}"}
   end
 end
