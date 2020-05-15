@@ -6,7 +6,7 @@ console.info("Bridgetown is loaded!")
 const endpoint = "/api/whats-the-time"
 
 document.querySelector("#callapi").addEventListener("click", () => {
-  axios.get(endpoint).then(response => {
+  axios.get(endpoint, {params: {search: "Search Query…"}}).then(response => {
     // handle success
     document.querySelector("#results").textContent = response.data
   })
@@ -14,9 +14,9 @@ document.querySelector("#callapi").addEventListener("click", () => {
 
 document.querySelector("#callpost").addEventListener("click", () => {
   console.info("posting!")
-  const fd = new FormData()
-  fd.append("foo", "bar")
-  axios.post(endpoint, {nice: "that"}).then(response => {
+//  const fd = new FormData()
+//  fd.append("foo", "bar")
+  axios.post(endpoint, {input: "JSON Works!"}).then(response => {
     console.info("response", response)
     // handle success
     const jsondata = response.data
