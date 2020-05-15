@@ -3,7 +3,7 @@ require_relative "../lib/nice_server"
 
 class Handler < NiceServer
   def get(params)
-    @res["Content-Type"] = 'text/plain'
+    @res["Content-Type"] = 'text/plain; charset=utf-8'
     "The Current Time is: #{Time.new}, and Bridgetown is v#{Bridgetown::VERSION} | params: #{params["search"]}"
   end
 
