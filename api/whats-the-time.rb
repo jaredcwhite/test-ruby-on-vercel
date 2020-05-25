@@ -1,6 +1,6 @@
 require "bridgetown"
 
-site = Bridgetown::Site.new(Bridgetown.configuration)
+site = Bridgetown::Site.new(Bridgetown.configuration({disable_disk_cache: true}))
 site.reset
 site.setup
 Bridgetown::Hooks.trigger :site, :pre_read
