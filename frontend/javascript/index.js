@@ -18,7 +18,6 @@ document.querySelector("#callpost").addEventListener("click", () => {
     console.info("response", response)
     // handle success
     const jsondata = response.data
-    document.querySelector("#results").textContent = `body: ${jsondata.body}, version: ${jsondata.version}`
-    console.info(jsondata.files)
+    document.querySelector("#results").textContent = `body: ${jsondata.body}, version: ${jsondata.version}, liquid: ${jsondata.liquid}`
   })
 })
