@@ -1,9 +1,9 @@
 require "bridgetown"
 
-site = Bridgetown::Site.new(Bridgetown.configuration({disable_disk_cache: true}))
-site.reset
-site.setup
-Bridgetown::Hooks.trigger :site, :pre_read
+$site = Bridgetown::Site.new(Bridgetown.configuration({disable_disk_cache: true}))
+$site.reset
+$site.setup
+$site.read
 
 class Handler < WEBrick::HTTPServlet::AbstractServlet
   def do_GET(req, res)
@@ -15,7 +15,7 @@ class Handler < WEBrick::HTTPServlet::AbstractServlet
   def do_POST(req, res)
     liquid_output = Liquid::Template.parse(
       "{% vercel Awesome %} {% render \"tester\", site: site %}"
-    ).render
+    ).render($site.site_payload)
 
     res.status = 200
     res["Content-Type"] = 'application/json'
