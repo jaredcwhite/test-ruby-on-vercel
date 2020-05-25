@@ -19,5 +19,6 @@ document.querySelector("#callpost").addEventListener("click", () => {
     // handle success
     const jsondata = response.data
     document.querySelector("#results").textContent = `body: ${jsondata.body}, version: ${jsondata.version}`
+    console.info(jsondata.files)
   })
 })
