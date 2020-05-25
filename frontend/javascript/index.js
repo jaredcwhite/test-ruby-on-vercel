@@ -14,6 +14,11 @@ document.querySelector("#callapi").addEventListener("click", () => {
 
 document.querySelector("#callpost").addEventListener("click", () => {
   console.info("posting!")
+  axios.defaults.headers.common = {
+    'Content-Type': 'application/json',
+    'Accept': 'application/json'
+  }
+
   axios.post(endpoint).then(response => {
     console.info("response", response)
     // handle success
