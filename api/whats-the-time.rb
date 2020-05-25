@@ -17,8 +17,10 @@ class Handler < WEBrick::HTTPServlet::AbstractServlet
       "{% vercel Awesome %} {% render \"tester\", site: site %}"
     ).render($site.site_payload)
 
+    rendered_page = Bridgetown::Renderer.new($site, $site.posts.docs.first, $site.site_payload).run
+
     res.status = 200
     res["Content-Type"] = 'application/json'
-    res.body = '{"body": "I am a posted response!", "version": "v' + Bridgetown::VERSION.to_s + '", "liquid": ' + liquid_output.inspect + '}'
+    res.body = '{"body": "I am a posted response!", "version": "v' + Bridgetown::VERSION.to_s + '", "liquid": ' + liquid_output.inspect + ', "rendered_page": ' + rendered_page.inspect + '}'
   end
 end
