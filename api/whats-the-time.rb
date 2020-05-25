@@ -1,5 +1,10 @@
 require "bridgetown"
 
+site = Bridgetown::Site.new(Bridgetown.configuration)
+site.reset
+site.setup
+Bridgetown::Hooks.trigger :site, :pre_read
+
 class Handler < WEBrick::HTTPServlet::AbstractServlet
   def do_GET(req, res)
     res.status = 200
@@ -8,19 +13,12 @@ class Handler < WEBrick::HTTPServlet::AbstractServlet
   end
 
   def do_POST(req, res)
-    setup_site
-
-    liquid_output = Liquid::Template.parse("{% vercel Awesome %}").render
+    liquid_output = Liquid::Template.parse(
+      "{% vercel Awesome %} {% render \"tester\", site: site %}"
+    ).render
 
     res.status = 200
     res["Content-Type"] = 'application/json'
     res.body = '{"body": "I am a posted response!", "version": "v' + Bridgetown::VERSION.to_s + '", "liquid": ' + liquid_output.inspect + '}'
-  end
-
-  def setup_site
-    site = Bridgetown::Site.new(Bridgetown.configuration)
-    site.reset
-    site.setup
-    Bridgetown::Hooks.trigger :site, :pre_read
   end
 end
