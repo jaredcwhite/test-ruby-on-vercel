@@ -10,6 +10,6 @@ class Handler < WEBrick::HTTPServlet::AbstractServlet
   def do_POST(req, res)
     res.status = 200
     res["Content-Type"] = 'application/json'
-    res.body = '{"body": "I am a posted response!", "version": "v' + Bridgetown::VERSION.to_s + '", "files": ' + Dir["*"] + '}'
+    res.body = '{"body": "I am a posted response!", "version": "v' + Bridgetown::VERSION.to_s + '", "files": ' + Dir["*"].inspect + '}'
   end
 end
