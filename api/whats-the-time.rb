@@ -21,6 +21,6 @@ class Handler < WEBrick::HTTPServlet::AbstractServlet
 
     res.status = 200
     res["Content-Type"] = 'application/json'
-    res.body = '{"body": "I am a posted response!", "version": "v' + Bridgetown::VERSION.to_s + '", "liquid": ' + liquid_output.inspect + ', "rendered_page": ' + rendered_page.inspect + '}'
+    res.body = {"body" => "I am a posted response!", "version" => 'v' + Bridgetown::VERSION.to_s, "liquid" => liquid_output, "rendered_page" => rendered_page}.to_json
   end
 end
