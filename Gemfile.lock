@@ -1,13 +1,13 @@
 PATH
   remote: ../bridgetown/bridgetown-builder
   specs:
-    bridgetown-builder (0.14.0)
-      bridgetown-core (= 0.14.0)
+    bridgetown-builder (0.14.1)
+      bridgetown-core (= 0.14.1)
 
 PATH
   remote: ../bridgetown/bridgetown-core
   specs:
-    bridgetown-core (0.14.0)
+    bridgetown-core (0.14.1)
       activesupport (~> 6.0)
       addressable (~> 2.4)
       colorator (~> 1.0)
@@ -25,12 +25,6 @@ PATH
       terminal-table (~> 1.8)
       thor (~> 1.0)
 
-PATH
-  remote: ../phaedra
-  specs:
-    phaedra (1.0.0)
-      activesupport (~> 6.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -42,21 +36,21 @@ GEM
       zeitwerk (~> 2.2, >= 2.2.2)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
-    bridgetown (0.14.0)
-      bridgetown-builder (= 0.14.0)
-      bridgetown-core (= 0.14.0)
-      bridgetown-paginate (= 0.14.0)
-    bridgetown-paginate (0.14.0)
-      bridgetown-core (= 0.14.0)
+    bridgetown (0.14.1)
+      bridgetown-builder (= 0.14.1)
+      bridgetown-core (= 0.14.1)
+      bridgetown-paginate (= 0.14.1)
+    bridgetown-paginate (0.14.1)
+      bridgetown-core (= 0.14.1)
     colorator (1.1.0)
     concurrent-ruby (1.1.6)
     faraday (1.0.1)
       multipart-post (>= 1.2, < 3)
     faraday_middleware (1.0.0)
       faraday (~> 1.0)
-    ffi (1.12.2)
+    ffi (1.13.0)
     forwardable-extended (2.6.0)
-    i18n (1.8.2)
+    i18n (1.8.3)
       concurrent-ruby (~> 1.0)
     kramdown (2.2.1)
       rexml
@@ -71,7 +65,11 @@ GEM
     multipart-post (2.1.1)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
+    phaedra (0.3.0)
+      activesupport (~> 6.0)
+      rack (~> 2.0)
     public_suffix (4.0.5)
+    rack (2.2.2)
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
@@ -91,10 +89,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bridgetown (~> 0.14.0)
+  bridgetown (~> 0.14.1)
   bridgetown-builder!
   bridgetown-core!
-  phaedra!
+  phaedra
 
 BUNDLED WITH
    1.17.3

@@ -14,26 +14,26 @@ document.querySelector("#callapi").addEventListener("click", () => {
 
 document.querySelector("#callpost").addEventListener("click", () => {
   console.info("posting!")
-//  const fd = new FormData()
-//  fd.append("foo", "bar")
-/*  axios.post(endpoint, {input: "JSON Works!"}).then(response => {
+  const fd = new FormData()
+  fd.append("input", "barz")
+  axios.post(endpoint, fd).then(response => {
+    console.info("response", response)
+    // handle success
+    const jsondata = response.data
+    document.querySelector("#results").textContent = `body: ${jsondata.body}, version: ${jsondata.version}`
+  })
+
+/*  axios.patch(endpoint, {input: "JSON Works!"}).then(response => {
     console.info("response", response)
     // handle success
     const jsondata = response.data
     document.querySelector("#results").textContent = `body: ${jsondata.body}, version: ${jsondata.version}`
   }) */
 
-  axios.patch(endpoint, {input: "JSON Works!"}).then(response => {
+/*  axios.delete(endpoint, {params: {input: "JSON Works!"}}).then(response => {
     console.info("response", response)
     // handle success
     const jsondata = response.data
     document.querySelector("#results").textContent = `body: ${jsondata.body}, version: ${jsondata.version}`
-  })
-
-  axios.delete(endpoint, {params: {input: "JSON Works!"}}).then(response => {
-    console.info("response", response)
-    // handle success
-    const jsondata = response.data
-    document.querySelector("#results").textContent = `body: ${jsondata.body}, version: ${jsondata.version}`
-  })
+  }) */
 })
