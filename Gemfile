@@ -20,6 +20,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 #gem 'liquid', "> 4.0.3", github: "jaredcwhite/liquid"
 
 gem "bridgetown", "~> 0.14.1"
+
 #gem "bridgetown-builder", path: "../bridgetown/bridgetown-builder"
 #gem "bridgetown-core", path: "../bridgetown/bridgetown-core"
 
