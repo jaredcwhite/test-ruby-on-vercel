@@ -4,5 +4,8 @@
     "api/racket/[racket].ru": {
       "runtime": "@vercel/ruby@1.2.1"
     }
-  }
+  },
+  "routes": [
+    { "src": "/api/racket/.*$", "dest": "/api/racket/[racket].ru" }
+  ]
 }
