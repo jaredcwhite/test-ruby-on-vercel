@@ -1,6 +1,6 @@
 require "phaedra"
 
-require_relative "../lib/shared_code"
+require_relative "../../lib/shared_code"
 
 class PhaedraFunction < Phaedra::Base
   def get(params)
