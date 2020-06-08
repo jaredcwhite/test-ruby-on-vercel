@@ -1,11 +1,11 @@
 {
   "version": 2,
   "functions": {
-    "config.ru": {
+    "api/config.ru": {
       "runtime": "@vercel/ruby@1.2.1"
     }
   },
   "routes": [
-    { "src": "/api/.*$", "dest": "/config.ru" }
+    { "src": "/api/.*$", "dest": "/api/config.ru" }
   ]
 }
