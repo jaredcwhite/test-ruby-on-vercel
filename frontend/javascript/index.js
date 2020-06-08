@@ -3,7 +3,7 @@ import axios from "axios"
 
 console.info("Bridgetown is loaded!")
 
-const endpoint = "/api/racket/whats-the-time"
+const endpoint = "/api/whats-the-time"
 
 document.querySelector("#callapi").addEventListener("click", () => {
   axios.get(endpoint, {params: {search: "Search Query"}}).then(response => {
