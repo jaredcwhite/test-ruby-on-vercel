@@ -1,7 +1,7 @@
 {
   "version": 2,
   "functions": {
-    "api/index.ru": {
+    "api/[index].ru": {
       "runtime": "@vercel/ruby@1.2.1"
     }
   }
