@@ -2,8 +2,7 @@
   "version": 2,
   "functions": {
     "api/config.ru": {
-      "runtime": "@vercel/ruby@1.2.1",
-      "includeFiles": "../phaedra/**"
+      "runtime": "@vercel/ruby@1.2.1"
     }
   },
   "routes": [
