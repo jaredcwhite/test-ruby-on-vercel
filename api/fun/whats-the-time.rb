@@ -52,4 +52,4 @@ class PhaedraFunction < Phaedra::Base
   end
 end
 
-#Handler = PhaedraFunction
+Handler = PhaedraFunction
