@@ -1,5 +1,6 @@
 require "phaedra"
 
 run Phaedra::RackApp.new({
-  "serverless_api_dir" => "_functions/api"
+  "root_dir" => File.join(__dir__, "_functions"),
+  "serverless_api_dir" => "api"
 })
