@@ -13,7 +13,7 @@ class PhaedraFunction < Phaedra::Base
   end
 
   def foobar
-    request.query["search"] += "HAHAHA" if request.query["search"]
+    request.query["search"] += " HAHAHA" if request.query["search"]
 
     if request.body
       request.body.sub!("Works", "Lurks")
