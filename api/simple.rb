@@ -1,11 +1,9 @@
-require "phaedra"
-
-require_relative "../lib/shared_code"
+require "../phaedra/initializers"
 
 class PhaedraFunction < Phaedra::Base
   def get(params)
     response["Content-Type"] = "text/html"
-    "<p>This is interesting. #{SharedCode.run_once} / #{Time.now}</p>"
+    "<p>This is interesting. #{Phaedra.start_time} / #{Time.now}</p>"
   end
 end
 
