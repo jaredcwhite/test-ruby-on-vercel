@@ -1,4 +1,4 @@
-require "../phaedra/initializers"
+require_relative "../phaedra/initializers"
 
 class PhaedraFunction < Phaedra::Base
   def get(params)
