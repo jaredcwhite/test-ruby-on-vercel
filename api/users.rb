@@ -12,7 +12,7 @@ class PhaedraFunction < Phaedra::Base
 
     {
       status: "complete",
-      token: user.present? ? Phaedra::Shared.jwt_for_user(user) : nil,
+      token: user.present? ? Phaedra::Auth.jwt_for_user(user) : nil,
       verified: user.present?,
       user: user_hash
     }
