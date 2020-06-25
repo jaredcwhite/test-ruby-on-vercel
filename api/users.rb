@@ -6,29 +6,31 @@ class PhaedraFunction < Phaedra::Base
     errors = verify_params(params)
     return errors if errors
 
-    user = User.find_login(params[:user_email].downcase, params[:user_password])
+    user = User.find_login(params[:email].downcase, params[:password])
     user_hash = user&.as_json
     user_hash.delete("password") if user_hash
 
-    {
-      status: "complete",
-      token: user.present? ? Phaedra::Auth.jwt_for_user(user) : nil,
-      verified: user.present?,
-      user: user_hash
-    }
+    user.present? ? Phaedra::Auth.jwt_for_user(user) : ""
+
+    # {
+    #   status: "complete",
+    #   token: user.present? ? Phaedra::Auth.jwt_for_user(user) : nil,
+    #   verified: user.present?,
+    #   user: user_hash
+    # }
   end
 
   def post(params)
     errors = verify_params(params)
     return errors if errors
 
-    User.create_with_password(params[:user_email].downcase, params[:user_password])
+    User.create_with_password(params[:email].downcase, params[:password])
 
     { status: "complete" }
   end
 
   def verify_params(params)
-    if params[:user_email].blank? || params[:user_password].blank?
+    if params[:email].blank? || params[:password].blank?
       response.status = 400
       { status: "error", error: "Please specify an email and password" }
     end

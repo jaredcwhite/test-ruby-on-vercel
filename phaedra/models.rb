@@ -16,9 +16,9 @@ class User
 
   def self.find_login(email, password)
     u = find_by(email: email)
+    return nil if u.nil?
+
     verify_password(u.password, password) ? u : nil
-  rescue Mongoid::Errors::DocumentNotFound
-    nil
   end
 
   def self.encrypt_password(raw_password)
