@@ -9,3 +9,5 @@ class PhaedraFunction < Phaedra::Base
     "Yay, I'm protected! #{current_user.inspect}"
   end
 end
+
+Handler = PhaedraFunction
