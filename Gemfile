@@ -24,3 +24,6 @@ gem "bridgetown", "~> 0.15"
 #gem "bridgetown-core", path: "../bridgetown/bridgetown-core"
 
 gem "phaedra" #, path: "../phaedra"
+gem "bcrypt"
+gem "mongoid"
+gem "jwt", "~> 2.2"
