@@ -10,14 +10,12 @@ class PhaedraFunction < Phaedra::Base
     user_hash = user&.as_json
     user_hash.delete("password") if user_hash
 
-    user.present? ? Phaedra::Auth.jwt_for_user(user) : ""
-
-    # {
-    #   status: "complete",
-    #   token: user.present? ? Phaedra::Auth.jwt_for_user(user) : nil,
-    #   verified: user.present?,
-    #   user: user_hash
-    # }
+    {
+      status: "complete",
+      token: user.present? ? Phaedra::Auth.jwt_for_user(user) : nil,
+      verified: user.present?,
+      user: user_hash
+    }
   end
 
   def post(params)
