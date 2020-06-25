@@ -12,8 +12,7 @@ module Bearer
     auth_header = request.header["http_authorization"]
     if auth_header
       token = auth_header.sub(/Bearer[ ]+/, "")
-      self.current_user = Phaedra::Auth.user_from_jwt(token)
-      return true if current_user
+      return self.current_user = Phaedra::Auth.user_from_jwt(token)
     end
 
 # Currently not supported by Phaedra in callbacks
