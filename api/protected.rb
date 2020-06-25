@@ -6,7 +6,7 @@ class PhaedraFunction < Phaedra::Base
   include Bearer
 
   def get(params)
-    "Yay, I'm protected! #{current_user.inspect}"
+    "Yay, this endpoint is protected! User: #{current_user.email}"
   end
 end
 
