@@ -9,7 +9,7 @@ module Bearer
   end
 
   def verify_bearer
-    auth_header = request.header["http_authorization"]
+    auth_header = request.is_a?(Phaedra::Request) ? request.header["http_authorization"] : request["authorization"]
     if auth_header
       token = auth_header.sub(/Bearer[ ]+/, "")
       return self.current_user = Phaedra::Auth.user_from_jwt(token)
