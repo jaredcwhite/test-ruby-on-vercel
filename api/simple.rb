@@ -5,6 +5,12 @@ class PhaedraFunction < Phaedra::Base
     response["Content-Type"] = "text/html"
     "<p>This is interesting! #{Phaedra::Shared.start_time} / #{Time.now}</p>"
   end
+
+  def post(params)
+    {
+      file_contents: params[:filedata]
+    }
+  end
 end
 
 Handler = PhaedraFunction
