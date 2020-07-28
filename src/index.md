@@ -6,7 +6,7 @@ layout: home
 
 Welcome to Bridgetown on Render.com!!!
 
-<button id="callapi">Let's Call a Serverless Function!</button>
+<button id="callapi">Let's Call a Serverless Function built with Phaedra</button>
 
 <button id="callpost">Let's POST to a Function!</button>
 
