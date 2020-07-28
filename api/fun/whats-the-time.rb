@@ -32,7 +32,7 @@ class PhaedraFunction < Phaedra::Base
   end
 
   def get(params)
-    "The Current Time is: #{Time.new}, and Bridgetown is v#{Bridgetown::VERSION} | params: #{params[:search]}"
+    "The Server Time is: #{Time.new}, and Bridgetown is v#{Bridgetown::VERSION} | params: #{params[:search]}"
   end
 
   def post(params)
